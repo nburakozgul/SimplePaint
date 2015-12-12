@@ -1,0 +1,9 @@
+D:\Okan Projects\VS2013\Paint\Paint\bin\Debug\Paint.exe
+D:\Okan Projects\VS2013\Paint\Paint\bin\Debug\Paint.pdb
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\Paint.csprojResolveAssemblyReference.cache
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\Paint.Properties.Resources.resources
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\Paint.csproj.GenerateResource.Cache
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\Paint.exe
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\Paint.pdb
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.Form1.resources
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.Colors_Form.resources

@@ -1,0 +1,9 @@
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.Colors_Form.resources
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.Form1.resources
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.csproj.GenerateResource.Cache
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.Properties.Resources.resources
+D:\Okan Projects\VS2013\Paint\Paint\bin\Debug\SimplePaint.exe
+D:\Okan Projects\VS2013\Paint\Paint\bin\Debug\SimplePaint.pdb
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.exe
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.pdb
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.csprojResolveAssemblyReference.cache
