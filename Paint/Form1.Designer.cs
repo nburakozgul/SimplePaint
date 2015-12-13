@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.drawSize_inc_button = new System.Windows.Forms.Button();
@@ -41,7 +41,8 @@
             this.button5 = new System.Windows.Forms.Button();
             this.btn_Rectangle = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // panel1
@@ -50,7 +51,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 83);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(976, 470);
+            this.panel1.Size = new System.Drawing.Size(1026, 691);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
@@ -73,7 +74,7 @@
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(903, 13);
+            this.button3.Location = new System.Drawing.Point(953, 13);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 62);
             this.button3.TabIndex = 4;
@@ -84,7 +85,7 @@
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(721, 12);
+            this.button4.Location = new System.Drawing.Point(862, 13);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 62);
             this.button4.TabIndex = 0;
@@ -185,23 +186,29 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button2
+            // button7
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(812, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(85, 62);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Load";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(771, 13);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(85, 62);
+            this.button7.TabIndex = 18;
+            this.button7.Text = "Template";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.ımageList1.ImageSize = new System.Drawing.Size(256, 256);
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 565);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1056, 786);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.btn_Square);
             this.Controls.Add(this.btn_Circle);
             this.Controls.Add(this.button5);
@@ -217,6 +224,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Simple Paint";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,7 +235,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button drawSize_inc_button;
@@ -237,7 +244,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btn_Rectangle;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ImageList ımageList1;
     }
 }
 

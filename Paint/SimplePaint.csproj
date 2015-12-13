@@ -68,6 +68,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shapes.cs" />
+    <Compile Include="Template_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Template_Form.Designer.cs">
+      <DependentUpon>Template_Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Colors_Form.resx">
       <DependentUpon>Colors_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,6 +91,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Template_Form.resx">
+      <DependentUpon>Template_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Properties\Settings.settings">

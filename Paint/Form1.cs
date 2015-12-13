@@ -30,12 +30,16 @@ namespace SimplePaint
         private float drawSize = 10;
         private Color drawColor = Color.Black;
         private bool load = false;
+        private int img_index;
+        private List<System.IO.FileInfo> files;
+
         public Form1()
         {
             InitializeComponent();
             //Set Double Buffering
             panel1.GetType().GetMethod("SetStyle", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(panel1, new object[] { System.Windows.Forms.ControlStyles.UserPaint | System.Windows.Forms.ControlStyles.AllPaintingInWmPaint | System.Windows.Forms.ControlStyles.DoubleBuffer, true });
-            
+            img_index = 0;
+            files=new List<System.IO.FileInfo>();
         }
 
 
@@ -121,7 +125,7 @@ namespace SimplePaint
             if (load)
             {
 
-                Image imag = Image.FromFile("PanelImage.png");
+                Image imag = Image.FromFile(files[img_index].FullName);
                 e.Graphics.DrawImage(imag, new Point(0, 0));
 
             }
@@ -166,13 +170,19 @@ namespace SimplePaint
             Brush = false;
         }
 
+        private void clearPanel() {
+
+            //Reset the list, removeing all shapes.
+            Drawings = new Shapes();
+            memoryShapes = new ShapesList();
+            load = false;
+            panel1.Refresh();
+        }
       
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //Reset the list, removeing all shapes.
-            Drawings = new Shapes();
-            panel1.Refresh();
+            clearPanel();
         }
 
         private void panel1_MouseEnter(object sender, EventArgs e)
@@ -222,8 +232,8 @@ namespace SimplePaint
             {
                 drawSize += 1;
                 
-                label1.Image = (Image)SimplePaint.Properties.Resources.ResourceManager.GetObject("th-" + (drawSize-5));
-
+                //label1.Image = (Image)SimplePaint.Properties.Resources.ResourceManager.GetObject("th-" + (drawSize-5));
+                label1.Text = drawSize.ToString();
             }
             
         }
@@ -233,7 +243,8 @@ namespace SimplePaint
             if (drawSize > 5f)
             {
                 drawSize -= 1;
-                label1.Image = (Image)SimplePaint.Properties.Resources.ResourceManager.GetObject("th-" + (drawSize-5));
+                //label1.Image = (Image)SimplePaint.Properties.Resources.ResourceManager.GetObject("th-" + (drawSize-5));
+                label1.Text = drawSize.ToString();
             }
         }
 
@@ -259,6 +270,35 @@ namespace SimplePaint
         {
             load = true;
             panel1.Refresh();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Template_Form.getInstance(this).Show();
+        }
+        public void loadImage(int index) {
+            clearPanel();
+            img_index = index;
+            load = true;
+            panel1.Refresh();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@"temps");
+            
+            foreach (System.IO.FileInfo file in dir.GetFiles())
+            {
+                files.Add(file);
+                try
+                {
+                    this.ımageList1.Images.Add(Image.FromFile(file.FullName));
+                }
+                catch
+                {
+                    Console.WriteLine("This is not an image file");
+                }
+            }
         }
 
     }

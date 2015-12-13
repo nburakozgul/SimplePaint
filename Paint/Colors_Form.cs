@@ -11,7 +11,7 @@ namespace SimplePaint
 {
     public partial class Colors_Form : Form
     {
-        public Colors_Form()
+        private Colors_Form()
         {
             InitializeComponent();
         }
