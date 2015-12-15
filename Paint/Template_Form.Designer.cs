@@ -93,7 +93,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Template_Form";
-            this.Text = "Template_Form";
+            this.Text = "Template Form";
             this.Load += new System.EventHandler(this.Template_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

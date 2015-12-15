@@ -6,10 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Microsoft.VisualBasic;
 namespace SimplePaint
 {
-    
+   
+
     public partial class Form1 : Form
     {
         private bool Brush = true;                      //Uses either Brush or Eraser. Default is Brush
@@ -28,7 +29,7 @@ namespace SimplePaint
         private Point ShapeOrigin = new Point(0, 0);
         private Point ShapeEnd = new Point(0, 0);
         private float drawSize = 10;
-        private Color drawColor = Color.Black;
+        private Color drawColor ;
         private bool load = false;
         private int img_index;
         private List<System.IO.FileInfo> files;
@@ -40,6 +41,7 @@ namespace SimplePaint
             panel1.GetType().GetMethod("SetStyle", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(panel1, new object[] { System.Windows.Forms.ControlStyles.UserPaint | System.Windows.Forms.ControlStyles.AllPaintingInWmPaint | System.Windows.Forms.ControlStyles.DoubleBuffer, true });
             img_index = 0;
             files=new List<System.IO.FileInfo>();
+            setDrawColor(Color.Black);
         }
 
 
@@ -103,7 +105,7 @@ namespace SimplePaint
                 if ( selectedShape!=0) {
 
                     ShapeEnd = e.Location;
-                    ShapeConc shapeToDraw = ShapeFactory.giveShape(selectedShape, ShapeOrigin, ShapeEnd);
+                    ShapeConc shapeToDraw = ShapeFactory.giveShape(selectedShape, ShapeOrigin, ShapeEnd,drawColor,drawSize);
                     memoryShapes.NewShape(shapeToDraw);
                     
                     selectedShape = 0;
@@ -150,7 +152,7 @@ namespace SimplePaint
             for (int i = 0; i < memoryShapes.NumberOfShapes(); ++i)
             {
                 memoryShapes.GetShape(i).setGraphics(e.Graphics);
-                memoryShapes.GetShape(i).drawShape(drawColor, drawSize);
+                memoryShapes.GetShape(i).drawShape();
             
             }
             
@@ -204,9 +206,17 @@ namespace SimplePaint
         {
             using (var bmp = new Bitmap(panel1.Width, panel1.Height))
             {
-                panel1.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, bmp.Width, bmp.Height));
-                bmp.Save("PanelImage1.png");
-
+                string filename=Interaction.InputBox("Give file name");
+                if (filename == "")
+                {
+                    MessageBox.Show("Save Canceled");
+                    return;
+                }
+                else
+                {
+                    panel1.DrawToBitmap(bmp, new System.Drawing.Rectangle(0, 0, bmp.Width, bmp.Height));
+                    bmp.Save(filename + ".png");
+                }
             }
             MessageBox.Show("Image saved successfully.");
         }
@@ -219,6 +229,7 @@ namespace SimplePaint
         public void setDrawColor(Color c)
         {
             drawColor = c;
+            button2.BackColor = c;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -231,9 +242,10 @@ namespace SimplePaint
             if (drawSize < 15f)
             {
                 drawSize += 1;
-                
-                //label1.Image = (Image)SimplePaint.Properties.Resources.ResourceManager.GetObject("th-" + (drawSize-5));
-                label1.Text = drawSize.ToString();
+                int res_index=((((int)drawSize-5)/2)+1);
+                res_index= res_index==6? res_index-1:res_index;
+                label1.Image = (Image)SimplePaint.Properties.Resources.ResourceManager.GetObject("th-" + res_index);
+              //  label1.Text = drawSize.ToString();
             }
             
         }
@@ -243,8 +255,10 @@ namespace SimplePaint
             if (drawSize > 5f)
             {
                 drawSize -= 1;
-                //label1.Image = (Image)SimplePaint.Properties.Resources.ResourceManager.GetObject("th-" + (drawSize-5));
-                label1.Text = drawSize.ToString();
+                int res_index = ((((int)drawSize - 5) / 2) + 1);
+                res_index = res_index == 6 ? res_index - 1 : res_index;
+                label1.Image = (Image)SimplePaint.Properties.Resources.ResourceManager.GetObject("th-" + res_index);
+               // label1.Text = drawSize.ToString();
             }
         }
 

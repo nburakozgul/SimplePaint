@@ -7,3 +7,4 @@ D:\Okan Projects\VS2013\Paint\Paint\bin\Debug\SimplePaint.pdb
 D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.exe
 D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.pdb
 D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.Template_Form.resources
+D:\Okan Projects\VS2013\Paint\Paint\obj\Debug\SimplePaint.csprojResolveAssemblyReference.cache

@@ -36,6 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -135,6 +136,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\true-colors.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eraser3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rect.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Square-outline-256.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

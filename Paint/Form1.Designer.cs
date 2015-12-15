@@ -30,23 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.drawSize_inc_button = new System.Windows.Forms.Button();
             this.drawSize_dec_button = new System.Windows.Forms.Button();
             this.btn_Square = new System.Windows.Forms.Button();
             this.btn_Circle = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btn_Rectangle = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 83);
@@ -59,17 +61,6 @@
             this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(221, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 61);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Eraser";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -92,17 +83,6 @@
             this.button4.Text = "Save";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Image = global::SimplePaint.Properties.Resources.th_1;
-            this.label1.Location = new System.Drawing.Point(113, 15);
-            this.label1.MinimumSize = new System.Drawing.Size(90, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
-            this.label1.TabIndex = 11;
             // 
             // drawSize_inc_button
             // 
@@ -128,63 +108,29 @@
             // 
             // btn_Square
             // 
-            this.btn_Square.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Square.BackColor = System.Drawing.Color.White;
+            this.btn_Square.BackgroundImage = global::SimplePaint.Properties.Resources.Square_outline_256;
+            this.btn_Square.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Square.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Square.Location = new System.Drawing.Point(615, 12);
+            this.btn_Square.Location = new System.Drawing.Point(674, 12);
             this.btn_Square.Name = "btn_Square";
-            this.btn_Square.Size = new System.Drawing.Size(89, 62);
+            this.btn_Square.Size = new System.Drawing.Size(67, 62);
             this.btn_Square.TabIndex = 13;
-            this.btn_Square.Text = "Square";
             this.btn_Square.UseVisualStyleBackColor = false;
             this.btn_Square.Click += new System.EventHandler(this.btn_Square_Click);
             // 
             // btn_Circle
             // 
             this.btn_Circle.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Circle.BackgroundImage = global::SimplePaint.Properties.Resources.circle;
+            this.btn_Circle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Circle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Circle.Location = new System.Drawing.Point(520, 12);
+            this.btn_Circle.Location = new System.Drawing.Point(579, 12);
             this.btn_Circle.Name = "btn_Circle";
             this.btn_Circle.Size = new System.Drawing.Size(89, 62);
             this.btn_Circle.TabIndex = 16;
-            this.btn_Circle.Text = "Circle";
             this.btn_Circle.UseVisualStyleBackColor = false;
             this.btn_Circle.Click += new System.EventHandler(this.btn_Circle_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = global::SimplePaint.Properties.Resources.pencil2_80;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(13, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(89, 62);
-            this.button5.TabIndex = 14;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btn_Rectangle
-            // 
-            this.btn_Rectangle.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Rectangle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Rectangle.Location = new System.Drawing.Point(425, 12);
-            this.btn_Rectangle.Name = "btn_Rectangle";
-            this.btn_Rectangle.Size = new System.Drawing.Size(89, 62);
-            this.btn_Rectangle.TabIndex = 15;
-            this.btn_Rectangle.Text = "Rectangle";
-            this.btn_Rectangle.UseVisualStyleBackColor = false;
-            this.btn_Rectangle.Click += new System.EventHandler(this.btn_Rectangle_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = global::SimplePaint.Properties.Resources.true_colors;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(317, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(89, 62);
-            this.button6.TabIndex = 12;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -203,11 +149,82 @@
             this.ımageList1.ImageSize = new System.Drawing.Size(256, 256);
             this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(422, 15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 39);
+            this.button2.TabIndex = 19;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::SimplePaint.Properties.Resources.pencil2_80;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(13, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(89, 62);
+            this.button5.TabIndex = 14;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btn_Rectangle
+            // 
+            this.btn_Rectangle.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Rectangle.BackgroundImage = global::SimplePaint.Properties.Resources.rect;
+            this.btn_Rectangle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Rectangle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Rectangle.Location = new System.Drawing.Point(484, 12);
+            this.btn_Rectangle.Name = "btn_Rectangle";
+            this.btn_Rectangle.Size = new System.Drawing.Size(89, 62);
+            this.btn_Rectangle.TabIndex = 15;
+            this.btn_Rectangle.UseVisualStyleBackColor = false;
+            this.btn_Rectangle.Click += new System.EventHandler(this.btn_Rectangle_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::SimplePaint.Properties.Resources.true_colors;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(317, 12);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(89, 62);
+            this.button6.TabIndex = 12;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Image = global::SimplePaint.Properties.Resources.th_1;
+            this.label1.Location = new System.Drawing.Point(113, 15);
+            this.label1.MinimumSize = new System.Drawing.Size(90, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.TabIndex = 11;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::SimplePaint.Properties.Resources.eraser3;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(221, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(90, 61);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 786);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btn_Square);
             this.Controls.Add(this.btn_Circle);
@@ -246,6 +263,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.ImageList ımageList1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

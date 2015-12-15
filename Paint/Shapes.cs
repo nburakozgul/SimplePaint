@@ -12,7 +12,7 @@ namespace SimplePaint
     public interface Shape
     {
         
-         void drawShape( Color c, float size = 1f);
+         void drawShape();
     }
 
     public abstract class ShapeConc :Shape
@@ -21,6 +21,8 @@ namespace SimplePaint
         private Point origin ;
         private Point end ;
         private int shapeNumber;
+        private Color color;
+        private float drawSize;
 
         public Point getOrigin(){
             return origin;
@@ -36,6 +38,9 @@ namespace SimplePaint
         public Graphics getGraphics(){
             return graphics;
         }
+        public Color getColor() { return color; }
+        public float getSize() { return drawSize; }
+
         public void setOrigin(Point origin)
         {
             this.origin = origin;
@@ -53,7 +58,9 @@ namespace SimplePaint
         {
             this.graphics = g;
         }
-        public virtual void drawShape( Color c, float size = 1f)
+        public void setColor(Color c) { color = c; }
+        public void setSize(float size) { drawSize = size; }
+        public virtual void drawShape( )
         {
             throw new NotImplementedException();
         }
@@ -66,77 +73,83 @@ namespace SimplePaint
 
     public class Circle : ShapeConc
     {
-        
-        
 
-       
-        public Circle(Point origin, Point end)
+        public Circle(Point origin, Point end,Color c, float width)
         {
             base.setOrigin(origin);
             base.setEnd(end);
-            
+            base.setColor(c);
+            base.setSize(width);
 
         }
         
-        public override void drawShape( Color c, float size = 1f)
+        public override void drawShape( )
         {
-            SolidBrush sb = new SolidBrush(c);
+            SolidBrush sb = new SolidBrush(getColor());
+            Pen pn = new Pen(sb,getSize());
             if (getGraphics() != null)
-                getGraphics().FillEllipse(sb, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().X - base.getEnd().X), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
-            
+                //getGraphics().FillEllipse(sb, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().X - base.getEnd().X), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
+                getGraphics().DrawEllipse(pn, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().X - base.getEnd().X), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
         }
     }
     public class Rectangle : ShapeConc
     {
-        
 
-       
-        public Rectangle(Point origin, Point end)
+
+
+        public Rectangle(Point origin, Point end, Color c, float width)
         {
             base.setOrigin(origin);
             base.setEnd(end);
-            
+            base.setColor(c);
+            base.setSize(width);
 
         }
-        public override void drawShape( Color c, float size = 1f)
+        public override void drawShape()
         {
-            SolidBrush sb = new SolidBrush(c);
+            SolidBrush sb = new SolidBrush(getColor());
+            Pen pn = new Pen(sb, getSize());
             if (getGraphics() != null)
-                getGraphics().FillRectangle(sb, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().X - base.getEnd().X), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
+                //getGraphics().FillRectangle(sb, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().X - base.getEnd().X), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
+            getGraphics().DrawRectangle(pn, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().X - base.getEnd().X), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
         }
     }
     public class Square : ShapeConc
     {
-        
-         public Square(Point origin, Point end)
+
+        public Square(Point origin, Point end, Color c, float width)
         {
             base.setOrigin(origin);
             base.setEnd(end);
+            base.setColor(c);
+            base.setSize(width);
         }
 
-        public override void drawShape( Color c, float size = 1f)
+        public override void drawShape()
         {
-            SolidBrush sb = new SolidBrush(c);
+            SolidBrush sb = new SolidBrush(getColor());
+            Pen pn = new Pen(sb, getSize());
             if (getGraphics() != null)
-                getGraphics().FillRectangle(sb, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().Y - base.getEnd().Y), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
+                //getGraphics().FillRectangle(sb, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().Y - base.getEnd().Y), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
+            getGraphics().DrawRectangle(pn, base.getOrigin().X, base.getOrigin().Y, Math.Abs(base.getOrigin().Y - base.getEnd().Y), Math.Abs(base.getOrigin().Y - base.getEnd().Y));
         }
     }
 
     // Factory class
     public class ShapeFactory
     {
-        public static ShapeConc giveShape(ShapeName sn, Point org ,Point end)
+        public static ShapeConc giveShape(ShapeName sn, Point org, Point end, Color c, float width)
         {
             if (sn == ShapeName.Square) {
-                return new Square(org,end);
+                return new Square(org,end,c, width);
             }
             else if (sn == ShapeName.Rectangle)
             {
-                return new Rectangle(org, end);
+                return new Rectangle(org, end, c, width);
             }
             else if (sn == ShapeName.Circle)
             {
-                return new Circle(org, end);
+                return new Circle(org, end, c, width);
             }
             return null;
         }

@@ -63,6 +63,26 @@ namespace SimplePaint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap circle {
+            get {
+                object obj = ResourceManager.GetObject("circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eraser3 {
+            get {
+                object obj = ResourceManager.GetObject("eraser3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fig_4 {
             get {
                 object obj = ResourceManager.GetObject("fig 4", resourceCulture);
@@ -96,6 +116,26 @@ namespace SimplePaint.Properties {
         internal static System.Drawing.Bitmap pencil2_80 {
             get {
                 object obj = ResourceManager.GetObject("pencil2-80", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rect {
+            get {
+                object obj = ResourceManager.GetObject("rect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Square_outline_256 {
+            get {
+                object obj = ResourceManager.GetObject("Square-outline-256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
